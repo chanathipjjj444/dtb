@@ -40,7 +40,7 @@ def train_func():
 # [5] Explicitly define and run the training function
 ray_trainer = TorchTrainer(
     train_func,
-    scaling_config=ray.train.ScalingConfig(num_workers=4, use_gpu=True),
+    scaling_config=ray.train.ScalingConfig(num_workers=2, use_gpu=True),
     run_config=ray.train.RunConfig(
         checkpoint_config=ray.train.CheckpointConfig(
             num_to_keep=3,
